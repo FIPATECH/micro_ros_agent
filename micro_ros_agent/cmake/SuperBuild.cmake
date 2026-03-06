@@ -27,10 +27,16 @@ if(NOT xrceagent_FOUND)
                 https://github.com/eProsima/Micro-XRCE-DDS-Agent.git
             GIT_TAG
                 v2.4.2
+            GIT_PROGRESS
+                OFF
             PREFIX
                 ${PROJECT_BINARY_DIR}/agent
             INSTALL_DIR
                 ${CMAKE_INSTALL_PREFIX}
+            LOG_DOWNLOAD
+                ON
+            LOG_UPDATE
+                ON
             CMAKE_ARGS
                 -Wno-dev
             CMAKE_CACHE_ARGS
