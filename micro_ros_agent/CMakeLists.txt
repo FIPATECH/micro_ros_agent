@@ -22,6 +22,11 @@ set(CMAKE_C_CLANG_TIDY clang-tidy -checks=*)
 option(MICROROSAGENT_SUPERBUILD "Enable superbuild compilation." ON)
 option(UAGENT_USE_SYSTEM_LOGGER "Force use of system installed spdlog logger on superbuild." OFF)
 
+# Colcon may pass this cache variable; touch it to avoid "unused variable" CMake warnings.
+if(DEFINED AMENT_CMAKE_SYMLINK_INSTALL)
+  set(_ament_cmake_symlink_install "${AMENT_CMAKE_SYMLINK_INSTALL}")
+endif()
+
 if(NOT MICROROSAGENT_SUPERBUILD)
     project(micro_ros_agent LANGUAGES CXX)
 else()
